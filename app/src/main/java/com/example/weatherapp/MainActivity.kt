@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
     val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
+    private var city: String = "Delhi"
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         permission = PermissionHandler()
-        var city = "Mumbai"
         if(!permission.isLocationOk(this)) permission.requestLocationPermission(this)
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (!isLocationEnabled()) showLocationSettingsDialog()

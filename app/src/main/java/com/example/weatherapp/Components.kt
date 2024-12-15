@@ -44,3 +44,4 @@ fun date(): String {
     val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
     return sdf.format((Date()))
 }
+
