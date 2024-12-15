@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Location Services Required")
         dialogBuilder.setMessage("Please enable location services to use this app.")
-        dialogBuilder.setPositiveButton("Enable") { dialog, which ->
+        dialogBuilder.setPositiveButton("Enable") { _, _ ->
             startActivityForResult(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS), 0,null)
         }
-        dialogBuilder.setNegativeButton("Cancel") { dialog, which ->
+        dialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
             dialog.dismiss()
         }
         val dialog = dialogBuilder.create()
